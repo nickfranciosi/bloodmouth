@@ -38,17 +38,41 @@
             font-size: 12vw;
         }   
 
+        img{
+            max-width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity:  0;
+        }
+
         .footer {
             position: fixed;
             bottom: 0px;
             left: 0;
             right:  0;  
             text-align: center;
+            padding-bottom: 5px;
         }
 
         .footer p {
             color: white;
+            font-size: 3vw;
             font-family: 'Rubik Mono One', sans-serif;
+        }
+
+        .footer p.small-txt {
+            font-size: 9px;
+        }
+
+        .fadeIn {
+            animation: fadeIn 3.5s 5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0%   { opacity:0; }
+            100% { opacity:1; }
         }
 
         @keyframes flickerAnimation {
@@ -87,11 +111,30 @@
     </style>
 </head>
 <body>
+    <img class="fadeIn" src="BLOODMAN.png">
     <main class="shake">
-        <h1 class="flicker">BLOODMOUTH</h1>  
+        <h1 class="flicker">BLOOD MOUTH</h1>  
     </main>
-            <div class="footer      ">
-                <p>by Steven Spielberg</p>
-            </div>
+    <div class="footer      ">
+        <p>a film by Steven Spielberg</p>
+        <p class="small-txt">tale adapted from the Bloodmouth Universe<sup>&copy;</sup></p>
+    </div>
 </body>
+<script>
+
+    function removeClass(name) {
+        const els = document.getElementsByClassName(name);
+            
+            [...els].forEach(el => {
+                el.classList.remove(name);
+            });
+    }
+    document.addEventListener("DOMContentLoaded", function(){
+        setTimeout(() => {
+            removeClass('flicker');
+            removeClass('shake');
+            
+        }, 5000)
+    });
+</script>
 </html>
