@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Bloodmouth</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <style>
+
+        html, body  
+        {
+            height: 100%;
+        }
         html {
             background-color: black;
             background: linear-gradient(165deg, rgba(0,0,0,1) 0%, rgba(55,49,49,1) 80%, rgba(106,95,95,1) 100%);
         }
 
-        main {
-
-            width: 100vw;
-            height: 100vh;
+        main {      
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100%;
         }
 
         h1 {
-            color: red;
-            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(205, 45, 45);
+            font-family: 'Rubik Mono One', sans-serif;
             font-size: 9vw;
+        }   
+
+        .footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right:  0;  
+            text-align: center;
+        }
+
+        .footer p {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         @keyframes flickerAnimation {
@@ -32,15 +50,42 @@
             50%  { opacity:0; }
             100% { opacity:1; }
         }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+            
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+            }
         
         .flicker {
-            animation: flickerAnimation 1.5s infinite;
+            animation: flickerAnimation 2.5s infinite;
         }
+
+        .shake {
+            animation: shake 2.5s infinite;
+        }
+
+
     </style>
 </head>
 <body>
-    <main>
+    <main class="shake">
         <h1 class="flicker">BLOODMOUTH</h1>  
     </main>
+            <div class="footer      ">
+                <p>by Steven Spielberg</p>
+            </div>
 </body>
 </html>
